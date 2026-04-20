@@ -1,0 +1,56 @@
+class Person {
+    String name;
+    int age;
+
+    void setPersonDetails(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void displayPersonDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Student extends Person {
+    int rollNumber;
+    double marks;
+
+    void setStudentDetails(int rollNumber, double marks) {
+        this.rollNumber = rollNumber;
+        this.marks = marks;
+    }
+
+    void displayStudentDetails() {
+        displayPersonDetails();
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Marks: " + marks);
+    }
+}
+
+class GraduateStudent extends Student {
+    String specialization;
+
+    void setGraduateDetails(String specialization) {
+        this.specialization = specialization;
+    }
+
+    void displayGraduateDetails() {
+        displayStudentDetails();
+        System.out.println("Specialization: " + specialization);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        GraduateStudent gs = new GraduateStudent();
+
+        gs.setPersonDetails("Rahul", 22);
+        gs.setStudentDetails(101, 88.5);
+        gs.setGraduateDetails("Computer Science");
+
+        System.out.println("Student Information:");
+        gs.displayGraduateDetails();
+    }
+}
